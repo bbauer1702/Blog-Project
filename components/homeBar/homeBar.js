@@ -6,9 +6,9 @@ var HomeBar = React.createClass({
     return(
       <div>
         <div className="jumbotron">
-          <h1 className="title">Hello from Brian's super kickass WideWorldWeb!</h1>
-          <h2 className="wisdom">I've got a bad feeling about this...</h2>
+          <h1 className="title">Hello from Brian's super awesome WideWorldWeb!</h1>
           { this.props.children }
+          
         </div>
       </div>
     )

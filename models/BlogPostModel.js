@@ -2,8 +2,9 @@ var mongoose = require('mongoose');
 
 var blogPostModel = new mongoose.Schema({
   postedBy: {type: String},
-  title: {type: String},
-  content: {type: String},
+  postedById: {type: String},
+  title: {type: String, required: true},
+  article: {type: String, required: true},
   images: {type: Array},
   datePosted: {type: Date},
   postNumber: {type: Number},

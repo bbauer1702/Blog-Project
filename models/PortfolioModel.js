@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
 
-var blogPostModel = new mongoose.Schema({
+var PortfolioModel = new mongoose.Schema({
   postedBy: {type: String},
-  title: {type: String},
-  description: {type: String},
+  title: {type: String, required: true},
+  description: {type: String, required: true},
   client: {type: String},
-  images: {type: Array},
+  images: {type: Array, required: true},
   datePosted: {type: Date},
   postNumber: {type: Number},
-  isPublished: {type: Boolean}
+  isPublished: {type: Boolean},
+  linkTo: {type: String}
 });
 
-module.exports = mongoose.model('BlogPost', blogPostModel);
+module.exports = mongoose.model('BlogPost', PortfolioModel);
