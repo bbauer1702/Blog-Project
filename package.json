@@ -30,9 +30,9 @@
     "body-parser": "^1.15.1",
     "cors": "^2.7.1",
     "express": "^4.13.4",
+    "express-stormpath": "^3.1.2",
     "history": "^3.0.0",
     "mongoose": "^4.5.0",
-    "mongoose-type-email": "^1.0.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1"

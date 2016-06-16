@@ -1,16 +1,15 @@
 var React = require('react');
 var Link = require('react-router').Link;
+import ReactStormpath, { Authenticated, NotAuthenticated, LoginLink, LogoutLink, LogoutRoute } from 'react-stormpath';
+
 
 var Landing = React.createClass({
   render: function(){
     return (
       <div>
-      	<div className="landerimg1">IMG1</div>
-        <div className="landerimg2">IMG2</div>
-        <div className="landerimg3">IMG3</div>
-        <div className="adminlogin">
-          <Link to='admin'><p>Admin Portal</p></Link>
-        </div>
+      	<div className="column-center">IMG1</div>
+        <div className="column-left">IMG2</div>
+        <div className="column-right">IMG3</div>
       </div>
     );
   }

@@ -3,6 +3,7 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var stormpath = require('express-stormpath');
 
 
 var app = express();
@@ -14,9 +15,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
 
+app.use(stormpath.init(app, {
+  web: {
+    produces: ['application/json']
+  }
+}));
+
 // Require controller ajax functions for database interaction
 var blogControl = require('./controllers/blogControl.js');
-var userControl = require('./controllers/userControl.js');
+// var userControl = require('./controllers/userControl.js');  // Not needed, Stormpath
+
+
 
 app.post('/blog/', blogControl.create);
 app.get('/blog/', blogControl.read);
@@ -24,14 +33,11 @@ app.put('/blog/:id', blogControl.update);
 app.delete('/blog/:id', blogControl.update);
 app.get('/blog/:id', blogControl.readById);
 
-app.post('/users/', userControl.create);
-app.get('/users/', userControl.read);
-app.put('/users/', userControl.update);
-// app.delete('/users/', userControl.delete);  // Do I need this?
-
-
-// STORMPATH !!!!! I hope it works!
-
+// All handled by Stormpath now.
+// app.post('/users/', userControl.create);
+// app.get('/users/', userControl.read);
+// app.put('/users/', userControl.update);
+// app.delete('/users/', userControl.delete);
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -76,7 +82,11 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-
-app.listen(9797, function(){
-  console.log("Spinning up the blog blasters! Targeting coordinates: 9797")
+app.on('stormpath.ready', function () {
+  app.listen(9797, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log('Spinning up the blog blasters! Targeting coordinates: 9797');
+  });
 });

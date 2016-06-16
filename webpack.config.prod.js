@@ -2,6 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+  devServer: {
+    historyApiFallback: true
+  },
   devtool: 'source-map',
   entry: [
     './components/config/routes'
