@@ -16,28 +16,46 @@ var Admin = React.createClass({
     }
   },
 
+  handleBlogTitleChange: function(e){
+    this.setState({ title: e.target.value })
+  },
+  handleBlogArticleChange: function(e){
+    this.setState({ article: e.target.value })
+  },
+  handleBlogPublishChange: function(e){
+    this.setState({ isPublished: e.target.value })
+  },
+  handleBlogImage0Change: function(e){
+    this.setState({ image0: e.target.value })
+  },
+  handleBlogImage1Change: function(e){
+    this.setState({ image1: e.target.value })
+  },
+  handleBlogImage2Change: function(e){
+    this.setState({ image2: e.target.value })
+  },
+
   handleBlogSubmit: function(e) {
-    e.preventDefault(); // Prevent page refresh on submit
+    e.preventDefault();
+    var blog = {};
+    blog.title = this.state.title;
+    blog.article = this.state.article;
+    blog.isPublished = this.state.isPublished;
+    blog.datePosted = new Date;
+    blog.images = [];
+    blog.images.push(this.state.image0, this.state.image1, this.state.image2);
 
-    var post = {}; // absorbs the following input:
-    post.title = this.state.title;
-    // post.posterEmail = Figure this out later https://docs.stormpath.com/nodejs/express/latest/user_data.html#current-user-json-api
-    post.article = this.state.article;
-    post.datePosted = new Date;
-    post.isPublished = this.state.isPublished;
-    post.images[0] = this.state.img0;
-    post.images[1] = this.state.img1;
-    post.images[2] = this.state.img2;
+    console.log("hello from handleBlogSubmit")
     this.handleNewBlogPost(blog);
-    console.log("hello from handleBlogSubmit");
-
     this.setState({ title: '', article: '' }) // reset fields (empty)
   },
 
+
   handleNewBlogPost: function(newBlog) {
+    console.log(newBlog)
     $.ajax({
       url: '/blog',
-      method: '/POST',
+      method: 'POST',
       dataType: 'json',
       data: newBlog,
       success: function(data) {
@@ -52,7 +70,14 @@ var Admin = React.createClass({
   render: function(){
     return(
       <div>
-        <BlogPostForm handleBlogSubmit={ this.handleBlogSubmit } />
+        <BlogPostForm handleBlogSubmit={ this.handleBlogSubmit }
+                      handleBlogTitleChange={ this.handleBlogTitleChange }
+                      handleBlogArticleChange={ this.handleBlogArticleChange }
+                      handleBlogPublishChange={ this.handleBlogPublishChange }
+                      handleBlogImage0Change={ this.handleBlogImage0Change }
+                      handleBlogImage1Change={ this.handleBlogImage1Change }
+                      handleBlogImage2Change={ this.handleBlogImage2Change }
+                      />
         <PortfolioPostForm />
       </div>
     );
