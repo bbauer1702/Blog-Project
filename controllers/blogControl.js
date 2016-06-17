@@ -48,9 +48,9 @@ module.exports =
   readById: function (req, res, next) {
     BlogPostModel.findById(req.params.id, function(err, result) {
       if (err) {
-        res.send(err)
+        res.send(err);
       } else {
-        res.send(result)
+        res.send(result);
       }
     });
   }

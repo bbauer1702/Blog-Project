@@ -9,7 +9,7 @@ import ReactStormpath, { Router, AuthenticatedRoute, LoginRoute, LoginLink } fro
 
 var Blog = require('./../blog/blog.js');
 var About = require('./../about/about.js');
-var HomeBar = require('./../homeBar/homeBar.js');
+var Main = require('./../main/main.js');
 var Admin = require('./../admin/admin.js');
 var Portfolio = require('./../portfolio/portfolio.js');
 var Landing = require('./../landing/landing.js');
@@ -23,17 +23,15 @@ ReactStormpath.init({
 // HomeBar will load by default (just planning a nav bar at top of screen) then the IndexRoute will load inside of that.
 ReactDOM.render(
   (<Router history={ hashHistory }>
-    <Route path='/' component={ HomeBar }>
+    <Route path='/' component={ Main }>
       <IndexRoute component={ Landing }/>
-      <Route path='/blog' component={ Blog }/>
-      <Route path='/about' component={ About }/>
+      <Route path='/blog' component={ Blog } />
+      <Route path='/about' component={ About } />
       <Route path='/portfolio' component={ Portfolio }/>
       <AuthenticatedRoute path='/admin' component={ Admin }/>
       <Route path='/register' component={ RegistrationPage } />
+      <LoginRoute path='/login' component={ LoginPage } />
     </Route>
-    <LoginRoute path='/login' component={ LoginPage } />
-
-
   </Router>),
   document.getElementById('app')
 );

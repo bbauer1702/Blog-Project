@@ -10,12 +10,10 @@ var Blog = React.createClass({
 
   getAllBlogsFromServer: function(){
   var self = this; // refer to self instead of this to prevent scope problems
-  console.log("hellogetblogs");
   $.ajax({
     method: 'GET',
     url: '/blog'
   }).done(function(data){
-    console.log(data);
     self.setState({ blogs: data })
   })
   },
@@ -26,10 +24,9 @@ var Blog = React.createClass({
   },
 
   render: function(){
-    console.log("HELLO!" + this.blogs);
     return (
       <div>
-        <BlogPostMapper blogs={ this.blogs } />
+        <BlogPostMapper blogs={ this.state.blogs } />
 
 
         <div className="blog-post-container">

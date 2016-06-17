@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var blogPostModel = new mongoose.Schema({
+var BlogPostModel = new mongoose.Schema({
   postedBy: {type: String},
   posterEmail: {type: String},
   title: {type: String, required: true},
@@ -11,4 +11,4 @@ var blogPostModel = new mongoose.Schema({
   isPublished: {type: Boolean}
 });
 
-module.exports = mongoose.model('BlogPost', blogPostModel);
+module.exports = mongoose.model('BlogPost', BlogPostModel);
