@@ -2,8 +2,12 @@ var React = require('react');
 var IndividualBlogPost = require('./individualBlogPost');
 
 function BlogPostMapper (props) {
-  console.log("Hello from BlogPostMapper");
-  var blogs = props.blogs.map(function(item){
+  // Sort blogs, most recent on top
+  var blogs = props.blogs.sort(function(a,b){
+    var c = new Date(a.datePosted);
+    var d = new Date(b.datePosted);
+    return d-c;
+  }).map(function(item){
     return <IndividualBlogPost title={ item.title }
                          article={ item.article }
                          datePosted={ item.datePosted }

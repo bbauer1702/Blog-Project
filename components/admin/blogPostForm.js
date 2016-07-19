@@ -3,7 +3,7 @@ var React = require('react');
 var BlogPostForm = React.createClass({
   render: function(){
     return(
-      <div>
+      <div className="blog-post-form">
         <h1>Post Blog Article</h1>
         <form onSubmit={ this.props.handleBlogSubmit }>
           <div className="form-group">
@@ -30,7 +30,7 @@ var BlogPostForm = React.createClass({
             <label>Publish now?</label>
           <input type="checkbox" ref="isPublished" onChange={ this.props.handleBlogPublishChange } value={ this.props.isPublished } />
           </div>
-          <button type="submit" className="btn btn-primary">Post Blog Entry</button>
+          <input type="submit" value="Post New Blog" />
         </form>
       </div>
     );

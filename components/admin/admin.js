@@ -16,6 +16,11 @@ var Admin = React.createClass({
     }
   },
 
+  handleImageUpload: function( ){
+    console.log("hello from handleImageUpload")
+  },
+
+
   handleBlogTitleChange: function(e){
     this.setState({ title: e.target.value })
   },
@@ -35,6 +40,8 @@ var Admin = React.createClass({
     this.setState({ image2: e.target.value })
   },
 
+
+
   handleBlogSubmit: function(e) {
     e.preventDefault();
     var blog = {};
@@ -45,9 +52,8 @@ var Admin = React.createClass({
     blog.images = [];
     blog.images.push(this.state.image0, this.state.image1, this.state.image2);
 
-    console.log("hello from handleBlogSubmit")
     this.handleNewBlogPost(blog);
-    this.setState({ title: '', article: '' }) // reset fields (empty)
+    this.setState({ title: '', article: '' }); // reset fields (empty)
   },
 
 

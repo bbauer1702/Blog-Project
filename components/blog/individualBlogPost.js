@@ -5,9 +5,9 @@ var IndividualBlogPost = React.createClass({
 
     return(
       <div className="blog-post-container">
-        <h1>Post Title: { this.props.title }</h1>
-        <p>Article: { this.props.article }</p>
-        <p>Posted By: { this.props.postedBy }</p>
+        <h2>{ this.props.title }</h2>
+        <p>{ this.props.article }</p>
+        <p>Posted by { this.props.postedBy } on { this.props.datePosted.split("T")[0] }</p>
       </div>
     )
   }

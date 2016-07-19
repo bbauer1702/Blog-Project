@@ -4,8 +4,14 @@ var About = React.createClass({
   render: function(){
     return (
       <div className="about">
-        <h2>Brian Bauer!</h2>
-    		<p>Derp herpem dee derpus! Le herpler me der ler perp. Ner herpler derpy ler derpus perp derperker tee? Perp serp le mer herp perper sherpus tee! Herpem der me le derps terp merp tee pee derpus. Der herpderpsmer berp terp herpler derp. Herp derpsum, serp derp derpy. Berp herpem berps derpler. Perp derps berp, herderder sherp? Berps herpsum, ler me pee perp? Berp der merpus derp. Nerpy der berps ner herpler me serp terp. Serp perp me, tee sherp nerpy terp derp le. Herp sherp pee merp le. Ter terp, tee herpy perp nerpy derperker.</p>
+        <h2>Hello, I'm Brian Bauer!</h2>
+        <br/>
+        <p>I'm a junior web developer currently training at Montana Code School in Bozeman, MT.</p>
+        <br/>
+        <p>email: brian.bauer@inventati.org</p>
+        <p>address: 9710 Quail Lane, Bozeman MT 59715</p>
+        <br/>
+        <p>I am currently looking for employment or internship opportunities. Please contact me if you have any suggestions!</p>
       </div>
     )
   }

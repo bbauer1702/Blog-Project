@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
 
+// Testing out Multer for image uploads
+// app.use(multer({ dest: './uploads/'}))
+
+// Stormpath for authentication must be initialized before any routes
 app.use(stormpath.init(app, {
   web: {
     produces: ['application/json']
@@ -23,9 +27,6 @@ app.use(stormpath.init(app, {
 
 // Require controller ajax functions for database interaction
 var blogControl = require('./controllers/blogControl.js');
-// var userControl = require('./controllers/userControl.js');  // Not needed, Stormpath
-
-
 
 app.post('/blog/', blogControl.create);
 app.get('/blog/', blogControl.read);
@@ -33,13 +34,8 @@ app.put('/blog/:id', blogControl.update);
 app.delete('/blog/:id', blogControl.update);
 app.get('/blog/:id', blogControl.readById);
 
-// All handled by Stormpath now.
-// app.post('/users/', userControl.create);
-// app.get('/users/', userControl.read);
-// app.put('/users/', userControl.update);
-// app.delete('/users/', userControl.delete);
 
-
+// This section is all about hot reloading
 if (process.env.NODE_ENV === 'production') {
   console.log('Running in production mode');
 

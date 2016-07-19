@@ -10,6 +10,9 @@ var NavBar = React.createClass({
       <div className="title-container">
         <h3 className="title">Brian Bauer</h3>
         <ul className="nav">
+          <Link to='about'><li>About</li></Link>
+          <Link to='portfolio'><li>Portfolio</li></Link>
+          <Link to='blog'><li>Blog</li></Link>
         <NotAuthenticated>
           <li>
           <LoginLink>Login</LoginLink>

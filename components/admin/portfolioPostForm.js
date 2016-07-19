@@ -3,7 +3,7 @@ var React = require('react');
 var PortfolioPostForm = React.createClass({
   render: function(){
     return(
-      <div>
+      <div className="portfolio-post-form">
         <h1>Post New Accomplishment to Portfolio</h1>
           <form>
             <div className="form-group">
@@ -23,22 +23,14 @@ var PortfolioPostForm = React.createClass({
               <input type="text" placeholder="URL to project" />
             </div>
             <div className="form-group">
-              <label>URL to image 1</label>
-              <input type="text" placeholder="Enter full URL here" />
-            </div>
-            <div className="form-group">
-              <label>URL to image 2</label>
-              <input type="text" placeholder="Enter full URL here" />
-            </div>
-            <div className="form-group">
-              <label>URL to image 3</label>
-              <input type="text" placeholder="Enter full URL here" />
+              <label>Image 1</label>
+              <input type="file" placeholder="Upload file here" />
             </div>
             <div className="form-group">
               <label>Publish now?</label>
               <input type="checkbox" />
             </div>
-            <button type="submit" className="btn btn-primary">Post Portfolio Entry</button>
+              <input type="submit" value="Post to Portfolio" />
           </form>
       </div>
     );
@@ -46,3 +38,16 @@ var PortfolioPostForm = React.createClass({
 });
 
 module.exports = PortfolioPostForm;
+
+{/*<div className="form-group">
+  <label>URL to image 1</label>
+  <input type="text" placeholder="Enter full URL here" />
+</div>
+<div className="form-group">
+  <label>URL to image 2</label>
+  <input type="text" placeholder="Enter full URL here" />
+</div>
+<div className="form-group">
+  <label>URL to image 3</label>
+  <input type="text" placeholder="Enter full URL here" />
+</div>*/}

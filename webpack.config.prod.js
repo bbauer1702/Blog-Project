@@ -41,6 +41,11 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
+      },
+      {   // load images without inlining them into the bundle
+        test: /\.(jpg|png)$/,
+        loader: 'file?name=[path][name].[hash].[ext]',
+        include: path.join(__dirname, 'views/img')
       }
     ]
   }
