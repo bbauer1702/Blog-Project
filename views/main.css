@@ -6,7 +6,7 @@ body, div, h1, h2, h3, p, ul {
 
 body {
   background-color: ##3F3F37;
-  background-image: url("/img/underwater.jpeg");
+  background-image: url("http://bbauer.io/images/underwater.jpeg");
   background-size: cover;
   font-family: 'Oxygen', sans-serif;
 }
@@ -67,7 +67,7 @@ a {
 }
 
 .column-left {
-  content: url(/img/moss-mush2.png);
+  content: url(http://bbauer.io/images/moss-mush2.png);
   float: left;
   width: 22%;
   height: 36vw;
@@ -76,7 +76,7 @@ a {
 }
 
 .column-right{
-  content: url(/img/moss-mush.png);
+  content: url(http://bbauer.io/images/moss-mush.png);
   float: right;
   width: 22%;
   height: 36vw;
@@ -85,7 +85,7 @@ a {
 }
 
 .column-center{
-  content: url(/img/tree-mush.png);
+  content: url(http://bbauer.io/images/tree-mush.png);
   display: inline-block;
   width: 22%;
   height: 36vw;

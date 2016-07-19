@@ -14,6 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
+app.use('/images', express.static(__dirname + '/images'));
 
 // Testing out Multer for image uploads
 // app.use(multer({ dest: './uploads/'}))
