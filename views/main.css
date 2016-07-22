@@ -5,8 +5,8 @@ body, div, h1, h2, h3, p, ul {
 }
 
 body {
-  background-color: ##3F3F37;
-  background-image: url("http://bbauer.io/images/underwater.jpeg");
+  background-color: ##053F4D;
+  background-image: url(http://bbauer.io/images/underwater.jpeg);
   background-size: cover;
   font-family: 'Oxygen', sans-serif;
 }
@@ -14,13 +14,13 @@ body {
 
 .title-container {
   height: 4.5vh;
-  background-color: #D6D6B1;
+  background-color: rgba(48, 73, 83, .4);
   border-bottom: 2px solid #071630;
   text-align: center;
 }
 
 .footer {
-  background-color: #D6D6B1;
+  background-color: rgba(48, 73, 83, .4);
   border-top: 2px solid #071630;
   text-align: center;
   width: 100vw;
@@ -59,48 +59,33 @@ a {
   display: inline-block;
 }
 
-.column-left, .column-right, .column-center {
-  margin-top: 6em;
-  background-color: #D6D6B1;
-  border-radius: 8px;
-  border: 2px solid #071630;
-}
 
-.column-left {
-  content: url(http://bbauer.io/images/moss-mush2.png);
-  float: left;
-  width: 22%;
-  height: 36vw;
-  margin-left: 10%;
-  margin-right: 3%;
-}
 
-.column-right{
-  content: url(http://bbauer.io/images/moss-mush.png);
-  float: right;
-  width: 22%;
-  height: 36vw;
-  margin-left: 3%;
-  margin-right: 10%;
-}
-
-.column-center{
-  content: url(http://bbauer.io/images/tree-mush.png);
-  display: inline-block;
-  width: 22%;
-  height: 36vw;
-  margin-left: 4%;
-  margin-right: 3%;
-}
-
-.about, .portfolio, div .blog-post-container, .blog-post-form, .portfolio-post-form {
+.about, .intro, .portfolio, div .blog-post-container, .blog-post-form, .portfolio-post-form {
   white-space: pre-wrap;
   padding: 4em;
   width: 70%;
   margin: 3em auto;
-  background-color: #D6D6B1;
+  background-color: rgba(48, 73, 83, .4);
   border-radius: 8px;
   border: 2px solid black;
+}
+
+.blog-post-container {
+  overflow: auto;
+}
+
+.blog-img-container {
+  width: 30%;
+  float: left;
+}
+.blog-img-container img{
+  width: 87%;
+}
+
+.blog-post-content {
+  width: 70%;
+  float: left;
 }
 
 .login, .registration{
@@ -109,20 +94,35 @@ a {
   right: 0;
   margin: 3em auto;
   display: inline-block;
-  background-color: #D6D6B1;
+  background-color: rgba(48, 73, 83, .4);
   border-radius: 8px;
   border: 2px solid black;
 }
 
  .about, .portfolio {
    padding: 3em;
-   margin-bottom: 17vw;  /*can't get the footer to stay down. this is a temp fix.*/
-
  }
 
  .about {
   margin-top: 30vh;
   line-height: 140%;
+  overflow: hidden;
+  margin-bottom: 17vw;  /*can't get the footer to stay down. this is a temp fix.*/
+ }
+
+ .profile-image-container {
+   float: left;
+   width: 30%;
+ }
+
+ .profile-image-container img, .blog-img {
+   border-radius: 8px;
+   width: 100%
+ }
+
+ .profile-content-container {
+   float: right;
+   width: 70%;
  }
 
 .blog-post-form, .portfolio-post-form {
@@ -132,4 +132,9 @@ a {
 
 .portfolio-img {
   width: 100%;
+}
+
+.blog-img {
+  float: left;
+  margin-right: 1.5em;
 }

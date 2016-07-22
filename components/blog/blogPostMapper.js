@@ -14,6 +14,7 @@ function BlogPostMapper (props) {
                          isPublished={ item.isPublished }
                          postedBy={ item.postedBy }
                          key={ item._id }
+                         images={ item.images }
                          blogs={ props.blogs }/>
   })
   return (

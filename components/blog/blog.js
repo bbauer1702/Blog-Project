@@ -9,13 +9,13 @@ var Blog = React.createClass({
   },
 
   getAllBlogsFromServer: function(){
-  var self = this; // refer to self instead of this to prevent scope problems
-  $.ajax({
-    method: 'GET',
-    url: '/blog'
-  }).done(function(data){
-    self.setState({ blogs: data })
-  })
+    var self = this; // refer to self instead of this to prevent scope problems
+    $.ajax({
+      method: 'GET',
+      url: '/blog'
+    }).done(function(data){
+      self.setState({ blogs: data })
+    })
   },
 
   // Fetch data in componentDidMount. When the response arrives, store the data in state, triggering a render to update your UI.
@@ -27,7 +27,7 @@ var Blog = React.createClass({
     return (
       <div>
         <BlogPostMapper blogs={ this.state.blogs } />
-      
+
       </div>
     )
   }

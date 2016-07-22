@@ -2,12 +2,22 @@ var React = require('react');
 
 var IndividualBlogPost = React.createClass({
   render: function(){
+    var image1 = '#';
+    if (this.props.images[0]){
+      image1 = this.props.images[0];
+    }
+
 
     return(
       <div className="blog-post-container">
-        <h2>{ this.props.title }</h2>
-        <p>{ this.props.article }</p>
-        <p>Posted by { this.props.postedBy } on { this.props.datePosted.split("T")[0] }</p>
+        <div className="blog-img-container">
+          <img className="blog-img" src={ image1 } />
+        </div>
+        <div className="blog-post-content">
+          <h2>{ this.props.title }</h2>
+          <p>{ this.props.article }</p>
+          <p>Posted by { this.props.postedBy } on { this.props.datePosted.split("T")[0] }</p>
+        </div>
       </div>
     )
   }
