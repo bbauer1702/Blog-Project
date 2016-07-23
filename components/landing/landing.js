@@ -31,7 +31,7 @@ var Landing = React.createClass({
     console.log('phase2');
     return this.state.blogs[0] ? <div className="blog-post-container">
                                   <div className="blog-img-container">
-                                    <img className="blog-img" src={ image } />
+                                    <img src={ image } />
                                   </div>
                                   <div className="blog-post-content">
                                     <h2>{ this.state.blogs[0].title }</h2>
@@ -52,15 +52,14 @@ var Landing = React.createClass({
           <div className="profile-content-container">
             <h2>Hello, I'm Brian Bauer!</h2>
             <br/>
-            <p>I'm a junior web developer currently training at Montana Code School in Bozeman, MT.</p>
+            <p>Welcome to my blog. Read the latest post below or check out <Link to='blog'>the Blogs section</Link> for more.</p>
             <br/>
-            <p>email: brian.bauer@inventati.org</p>
-            <p>address: 9710 Quail Lane, Bozeman MT 59715</p>
-            <br/>
-            <p>I am currently looking for employment or internship opportunities. Please contact me if you have any suggestions!</p>
+            <p>Send me an <a href="mailto:brian.bauer@inventati.org"> e-mail</a> you have something that you would like to discuss!</p>
           </div>
         </div>
+
         { this.recentPost() }
+
       </div>
     );
   }

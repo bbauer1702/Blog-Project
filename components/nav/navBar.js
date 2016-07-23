@@ -8,7 +8,8 @@ var NavBar = React.createClass({
   render: function(){
     return(
       <div className="title-container">
-        <h3 className="title">Brian Bauer</h3>
+        {/*<h3 className="title">Brian Bauer</h3>*/}
+        <img className="title" src="http://bbauer.io/images/bbauerioheader.png" />
         <ul className="nav">
           <Link to='about'><li>About</li></Link>
           <Link to='portfolio'><li>Portfolio</li></Link>
@@ -17,9 +18,9 @@ var NavBar = React.createClass({
           <li>
           <LoginLink>Login</LoginLink>
           </li>
-          <li>
+          {/*<li>
           <Link to='register'><p>Register</p></Link>
-          </li>
+          </li>*/}
         </NotAuthenticated>
         <Authenticated>
           <li>
